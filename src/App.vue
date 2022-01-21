@@ -7,7 +7,8 @@
     
     <Home v-if="currentView == 'Home'" @switchviewhome="currentView = 'Addcard'"/>
     <Addcard v-else-if="currentView == 'Addcard'" @switchviewcard="currentView = 'Home'"/>
-    <Cardform/>
+    <!-- <Cardform/> -->
+    
   
   </div>
 </template>
@@ -15,10 +16,10 @@
 <script>
 import Home from './views/Home.vue'
 import Addcard from './views/Addcard.vue'
-import Cardform from './components/Cardform.vue'
+
 
 export default {
-  components: { Home, Addcard, Cardform},
+  components: { Home, Addcard,},
   name: 'App',
   data(){ return {
     currentView : 'Home'
@@ -57,6 +58,8 @@ body{
   flex-direction: column;
   align-items: center;
   
+  
+  
   width: 414px;
   height: 896px;
   background-color: white;
@@ -68,10 +71,7 @@ a{
 h1{
 font-family: 'Source Sans Pro', sans-serif;
 font-weight: 900;
-}
 
-p{
-  font-family: 'Source Sans Pro', sans-serif;
 }
 button{
 background-color: white;
@@ -81,7 +81,13 @@ background-color: white;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: auto auto 5px auto;
+  margin-top: 10px;
   cursor: pointer;
+  
 }
+
+p,button,input{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 </style>
