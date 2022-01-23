@@ -11,12 +11,14 @@ export default {
 </script>
 
 <style>
+
 .Creditcard{
 
     width: 382px;
     height: 241px;
     background-color: cadetblue;
     border-radius: 5px;
+    margin-left: 20px;
 }
 
 </style>

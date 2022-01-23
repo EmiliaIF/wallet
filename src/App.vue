@@ -18,6 +18,7 @@ import Home from './views/Home.vue'
 import Addcard from './views/Addcard.vue'
 
 
+
 export default {
   components: { Home, Addcard,},
   name: 'App',
@@ -65,9 +66,9 @@ body{
   background-color: white;
 
 }
-a{
-  margin: 2rem;
-}
+/* a{
+  margin: 2rem; */
+/* } */
 h1{
 font-family: 'Source Sans Pro', sans-serif;
 font-weight: 900;

@@ -1,9 +1,10 @@
 <template>
-  
+  <div>
+    <!-- <Card/> -->
   <form @submit.prevent="" class="Cardform">
-
-    <input type="text" placeholder="Card number">
-    <input type="text" placeholder="Cardholder name">
+    
+    <input type="text"  placeholder="Card number">
+    <input type="text"  placeholder="Cardholder name">
 
     <div class="monthyear">
     <input type="text" placeholder="Month">
@@ -20,40 +21,66 @@
       </div>
    
   </form>
- 
+ </div>
 </template>
 
-<script>
-export default {
+// <script>
+// import Card from '../components/Card.vue'
+// export default {
+//   components: { Card,},
+//    data(){return{
 
-}
+//   }},
+
+
+// }
 </script>
 
-<style>
+<style >
 form{
     
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    box-sizing: border-box;
     
+}
+.monthyear{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-left: 35%;
+}
+
+.monthyear input{
+  width: 100px;
+  
+  
+}
+
+
+
+
+input{
+
+  width: 382px;
+  border-radius: 5px;
 }
 
 input[type=text] {
   background-color: white;
-  background-position: 10px 10px;
   background-repeat: no-repeat;
-  padding-left: 40px;
-  height: 40px;
   margin: 1rem;
+  height: 40px;
+  
 }
 
-.dropbtn {
+input.dropbtn {
   background-color: white;
   color: black;
   border: 2px solid black;
   font-size: 16px;
-  width: 195px;
+  
   height: 40px;
   align-items: center;
   margin: 0;
