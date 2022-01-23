@@ -4,8 +4,12 @@
 
     <input type="text" placeholder="Card number">
     <input type="text" placeholder="Cardholder name">
+
+    <div class="monthyear">
     <input type="text" placeholder="Month">
     <input type="text" placeholder="Year">
+    </div>
+
     <div class="dropdown">
       <button class="dropbtn">Month</button>
         <div class="dropdown-content">
