@@ -9,7 +9,7 @@
 
     <div class="monthyear">
     <div class= "month">
-    <p>Month</p>
+    <!-- <p>Month</p> -->
     <input @keypress="monthlength"  v-model="cardInfo.expireMonth" type="number" placeholder="Month">
     </div>
     <input @keypress="monthlength" v-model="cardInfo.expireYear" type="number" placeholder="Year">

@@ -12,7 +12,7 @@
     </div>
 
     <div class="cardnumber">
-      <p>{{importData.cardNumber}}</p>
+      <p>{{importData.cardNumber | spacedout}}</p>
     </div>
 
       
@@ -38,6 +38,16 @@
 <script>
 
 export default {
+  
+
+  filters:{
+  spacedout(value){
+    if (!value) {
+        return "XXXX XXXX XXXX XXXX";
+      }
+const parts = value.match(/.{1,4}/g);
+      return parts.join(" ");
+}},
   
   components: {},
   props:[ "importData"],
@@ -95,11 +105,7 @@ export default {
     margin-bottom: 0px;
     
 }
-.cardnumber{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
+
 .bitcoin{
   width: 50px;
   height: 50px;
@@ -115,9 +121,7 @@ export default {
 }
 
 .text{
- 
-    display: flex;
-    flex-direction: column;
+
     
     margin-left: 1rem;
     margin-right: 1rem;
