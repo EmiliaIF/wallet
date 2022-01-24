@@ -88,7 +88,8 @@ background-color: white;
 }
 
 p,button,input{
-  font-family: 'Source Sans Pro', sans-serif;
+
+font-family: 'Source Sans Pro', sans-serif;
 }
 
 </style>

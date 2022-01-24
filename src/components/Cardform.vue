@@ -1,23 +1,28 @@
 <template>
   <div>
-    <!-- <Card/> -->
+    <Card :importData ="cardInfo"/>
+
   <form @submit.prevent="" class="Cardform">
     
-    <input type="text"  placeholder="Card number">
-    <input type="text"  placeholder="Cardholder name">
+    <input @keypress="cardlength"   v-model="cardInfo.cardNumber" type="number"  placeholder="Card number">
+    <input v-model="cardInfo.cardholder" type="text"  placeholder="Cardholder">
 
     <div class="monthyear">
-    <input type="text" placeholder="Month">
-    <input type="text" placeholder="Year">
+    <div class= "month">
+    <p>Month</p>
+    <input @keypress="monthlength"  v-model="cardInfo.expireMonth" type="number" placeholder="Month">
+    </div>
+    <input @keypress="monthlength" v-model="cardInfo.expireYear" type="number" placeholder="Year">
     </div>
 
     <div class="dropdown">
-      <button class="dropbtn">Month</button>
-        <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
+      
+        <select name="dropdown-content" id="dropdown-content">
+          <option value="Bitcoin">Bitcoin Inc</option>
+          <option value="Evil">Evil Corp</option>
+          <option value="Ninja">Ninja Bank</option>
+          <option value="Block">Block Chain Inc</option>
+        </select>
       </div>
    
   </form>
@@ -25,15 +30,36 @@
 </template>
 
 // <script>
-// import Card from '../components/Card.vue'
-// export default {
-//   components: { Card,},
-//    data(){return{
+import Card from './Card.vue'
+export default {
+  components: { Card, },
+  data(){return{
+  cardInfo:{
+  cardNumber: "", 
+  cardholder: "", 
+  expireMonth: "", 
+  expireYear: "", 
+  vendor: "", 
 
-//   }},
+   }}},
 
+methods:{
+  cardlength(number){
+    const maxNum = number.target.value;
+    if(maxNum.length >= 16) {
+    number.preventDefault();
+    }
+  },
+  monthlength(number){
+    const maxNum = number.target.value;
+    if(maxNum.length >= 2){
+      number.preventDefault();
+    }
+  },
+  
+}
 
-// }
+}
 </script>
 
 <style >
@@ -57,7 +83,12 @@ form{
   
   
 }
+/* .month{
+ display: flex;
+flex-direction: column;
+margin: */
 
+/* } */
 
 
 
@@ -75,7 +106,16 @@ input[type=text] {
   
 }
 
-input.dropbtn {
+input[type=number] {
+  background-color: white;
+  background-repeat: no-repeat;
+  margin: 1rem;
+  height: 40px;
+  
+}
+
+
+select{
   background-color: white;
   color: black;
   border: 2px solid black;
@@ -84,41 +124,21 @@ input.dropbtn {
   height: 40px;
   align-items: center;
   margin: 0;
+  width: 242px;
+  border-radius: 5px;
 }
 
 
-.dropdown {
-
-  display: inline-block;
-  width: 180px;
-  
-}
-
-
-.dropdown-content {
+option {
  
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
+  background-color: rgb(73, 73, 73);
   width: 175px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  border-radius: 5px;
+  color:white;
 }
 
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #ddd;}
-
-
-.dropdown:hover .dropdown-content {display: block;}
-
-
-.dropdown:hover .dropbtn {background-color: rgb(201, 201, 201);}
 
 </style>
